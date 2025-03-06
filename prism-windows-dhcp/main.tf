@@ -1,11 +1,11 @@
-# terraform {
-#   required_providers {
-#     nutanix = {
-#       source  = "nutanix/nutanix"
-#       version = "1.8.1"
-#     }
-#   }
-# }
+terraform {
+  required_providers {
+    nutanix = {
+      source  = "nutanix/nutanix"
+      version = "2.0.0"
+    }
+  }
+}
 # zet provider, Nutanix
 provider "nutanix" {
   username     = var.nutanix_username
