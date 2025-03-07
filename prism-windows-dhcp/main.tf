@@ -33,7 +33,7 @@ data "nutanix_image" "image" {
 
 # unattend.xml template vertalen mag niet in een subdirectory staan voor Morpheus
 data "template_file" "unattend" {
-  template = file("unattend.xml")
+  template = file("${path.module}/unattend.xml")
   vars = {
     vm_name             = var.t_vm_name
     hostname            = var.t_hostname
@@ -43,7 +43,7 @@ data "template_file" "unattend" {
 }
 
 data "template_file" "unattend2" {
-  template = file("unattend.xml")
+  template = file("${path.module}/unattend.xml")
   vars = {
     vm_name             = format("%s.%s",var.t_vm_name,"2")
     hostname            = format("%s.%s",var.t_hostname,"2")
